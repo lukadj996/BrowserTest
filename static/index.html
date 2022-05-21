@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testing Browser</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/Icon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/Icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/Icon/favicon-16x16.png">
+    <link rel="manifest" href="/Icon/site.webmanifest">
+    <link rel="mask-icon" href="/Icon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/Icon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="/Icon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+</head>
+
+<body>
+    <h1>Brower Tester</h1>
+    <div class="flex_container yesjs">JavaScript is <b>Enabled</b></div>
+    <noscript>
+        <style>
+            .yesjs {
+                display: none;
+            }
+        </style>
+        <div class="flex_container nojs">JavaScript is <b>Disabled</b></div>
+    </noscript>
+    <div class="flex_container">
+        <div class="flex_row">
+            <button id="alert">Alert</button>
+            <div class="result"></div>
+        </div>
+        <div class="flex_row">
+            <button id="confirm">Confirm</button>
+            <div class="result"></div>
+        </div>
+        <div class="flex_row">
+            <button id="prompt">Prompt</button>
+            <div class="result"></div>
+        </div>
+        <div class="flex_row">
+            <button id="loop_alert">Loop Alert</button>
+            <div class="result"></div>
+        </div>
+        <div class="flex_row">
+            <button id="get_user_agent">Get User Agent</button>
+            <div class="result"></div>
+        </div>
+        <div class="flex_row">
+            <button id="test_cookies">Test Cookies</button>
+            <div class="result"></div>
+        </div>
+    </div>
+    <div class="flex_container links">
+        <div class="flex_row">
+            <a href="/popups.html" target="_blank">link to popups page (new Tab)</a>
+        </div>
+        <div class="flex_row">
+            <a href="https://www.google.com">www.google.com</a>
+        </div>
+        <div class="flex_row">
+            call me on:
+            <a href="tel:555-666-7777">555-666-7777</a>
+        </div>
+    </div>
+    <div class="flex_container">
+        <div class="flex_row">
+            <form action="/form/" method="post">
+                <label for="testinput">Test input (with suggestions):</label>
+                <input type="text" name="testinput" id="testinput">
+                <label for="testinput2">Test input (without suggestions):</label>
+                <input type="text" name="testinput2" id="testinput2" autocomplete="off">
+                <button type="submit">Submit POST</button>
+            </form>
+        </div>
+    </div>
+    <div class="flex_container links">
+        <div class="flex_row">
+            <a href="/status/401">status code 401</a>
+            authorization
+        </div>
+        <div class="flex_row">
+            <a href="/status/408">status code 408</a>
+            request timeout
+        </div>
+    </div>
+</body>
+
+</html>

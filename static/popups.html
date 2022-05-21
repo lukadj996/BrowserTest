@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popups tester</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/Icon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/Icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/Icon/favicon-16x16.png">
+    <link rel="manifest" href="/Icon/site.webmanifest">
+    <link rel="mask-icon" href="/Icon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/Icon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="/Icon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+</head>
+
+<body>
+    <style>
+        .text {
+            text-align: center;
+        }
+
+        #progress {
+            margin: 20px auto;
+            width: 80%;
+            height: 40px;
+            position: relative;
+            background-color: #ddd;
+        }
+
+        #bar {
+            background-color: #4267b2;
+            width: 10px;
+            height: 40px;
+            position: absolute;
+        }
+
+        #loading {
+            font-size: 1.4rem;
+        }
+    </style>
+    <h1 class="text">This page will try to open popup!</h1>
+    <div id="progress">
+        <div id="bar"></div>
+    </div>
+    <p class="text" id="loading"></p>
+    <script>
+        let windowObjectReference;
+        let windowFeatures = "left=100,top=100,width=320,height=320";
+
+        function openRequestedPopup() {
+            windowObjectReference = window.open("http://www.google.com/", "mozillaWindow", windowFeatures);
+        }
+        const progressBar = document.getElementById("bar");
+        const loadingMsg = document.getElementById("loading");
+        let barWidth = 0;
+
+        const animate = () => {
+            barWidth++;
+            progressBar.style.width = `${barWidth}%`;
+        };
+
+        // animation starts 2 seconds after page load
+        {
+            let intervalID = setInterval(() => {
+                if (barWidth === 100) {
+                    clearInterval(intervalID);
+                    openRequestedPopup();
+                    loadingMsg.innerText = "Popup sent!"
+                } else {
+                    animate();
+                }
+            }, 20); //this sets the speed of the animation
+        }
+    </script>
+</body>
+
+</html>
