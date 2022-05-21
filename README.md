@@ -120,7 +120,6 @@ Project Link: [https://github.com/lukadj996/BrowserTest](https://github.com/luka
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/lukadj996/BrowserTest.svg?style=for-the-badge
