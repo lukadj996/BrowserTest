@@ -53,7 +53,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Product Name Screen Shot][product-screenshot]](https://test.lukaluci.com)
 
 You can test build in browser features like alert, confirm, promt, authenticate, to check if javascript enabling and disable is working, to check if cookies are enabled, etc...
 
