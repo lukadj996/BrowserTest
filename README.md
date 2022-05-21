@@ -81,7 +81,7 @@ git, nodejs and npm installed
    ```
 4. run the server
    ```
-   npm run dev
+   npm start
    ```
 5. open http://localhost
 
