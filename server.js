@@ -67,6 +67,14 @@ app.post("/form",(req,res)=>{
   let {testinput,testinput2} = req.body
   res.send(`<h1>Form submitted!</h1><p style="font-size:1.2em">testinput: "${testinput}", testinput 2: "${testinput2}"</p>`)
 })
+app.get("/set_cookie",(req,res)=>{
+  if(req.headers.cookie !== "serversidehttponly=qwerty123"){
+    res.setHeader("set-cookie","serversidehttponly=qwerty123; httpOnly=true")
+    res.send(`Http only cookie is not set. <br>Tried to set http Only cookie, please refresh!`)
+  }else{
+    res.send(`Cookie set succefful! ${req.headers.cookie}`)
+  }
+})
 
 // Start the server
 const PORT = parseInt(process.env.PORT) || 80;
