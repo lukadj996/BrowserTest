@@ -53,7 +53,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Product Name Screen Shot][product-screenshot]](https://test.lukaluci.com)
 
 You can test build in browser features like alert, confirm, promt, authenticate, to check if javascript enabling and disable is working, to check if cookies are enabled, etc...
 
@@ -81,7 +81,7 @@ git, nodejs and npm installed
    ```
 4. run the server
    ```
-   npm run dev
+   npm start
    ```
 5. open http://localhost
 
@@ -120,7 +120,6 @@ Project Link: [https://github.com/lukadj996/BrowserTest](https://github.com/luka
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/lukadj996/BrowserTest.svg?style=for-the-badge
@@ -135,4 +134,4 @@ Project Link: [https://github.com/lukadj996/BrowserTest](https://github.com/luka
 [license-url]: https://github.com/lukadj996/BrowserTest/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/linkedin_username
-[product-screenshot]: images/screenshot.png
+[product-screenshot]: images/screenshot.png 
