@@ -13,7 +13,9 @@ if (process.env.NODE_ENV === "production") {
 process.env.TZ = "Europe/Belgrade"
 app.use(static_express("./static"))
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({
+  extended: true
+}));
 // console.log("############################# NODE_ENV", process.env.NODE_ENV)
 function luka_redirect(req, res, next) {
   const subdomainParser = (function () {
@@ -63,16 +65,32 @@ app.get("/status/408", (req, res) => {
   res.status(408).send("408 Request Timeout")
   // or call next() if you use it as middleware (as snippet #1)
 })
-app.post("/form",(req,res)=>{
-  let {testinput,testinput2} = req.body
+app.post("/form", (req, res) => {
+  let {
+    testinput,
+    testinput2
+  } = req.body
   res.send(`<h1>Form submitted!</h1><p style="font-size:1.2em">testinput: "${testinput}", testinput 2: "${testinput2}"</p>`)
 })
-app.get("/set_cookie",(req,res)=>{
-  if(req.headers.cookie !== "serversidehttponly=qwerty123"){
-    res.setHeader("set-cookie","serversidehttponly=qwerty123; httpOnly=true")
-    res.send(`Http only cookie is not set. <br>Tried to set http Only cookie, please refresh!`)
-  }else{
+app.get("/set_cookie", (req, res) => {
+  let cookie_exist = false;
+  if (req.headers.cookie) {
+    cookie_exist = req.headers.cookie.split("; ").includes("serversidehttponly=qwerty123")
+  }
+  if (cookie_exist) {
     res.send(`Cookie set succefful! ${req.headers.cookie}`)
+  } else {
+    res.setHeader("set-cookie", "serversidehttponly=qwerty123; httpOnly=true")
+    res.send(`Http only cookie is not set. <br>Tried to set http Only cookie, please refresh!`)
+  }
+})
+
+app.get("/clear_cookies", (req, res) => {
+  if (req.headers.cookie) {
+    res.setHeader("Clear-Site-Data", '"cookies"')
+    res.send(`Cookie recieved: ${req.headers.cookie} <br> please refresh to see if cookies are cleared!`)
+  } else {
+    res.send(`No cookies recieved!`)
   }
 })
 
