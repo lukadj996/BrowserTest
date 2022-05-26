@@ -55,9 +55,8 @@ function test_cookies_fn() {
 
     if (cookieEnabled && navigator.cookieEnabled) {
 
-        this.nextElementSibling.innerText = `Cookies are Enabled`
+        this.nextElementSibling.innerHTML = `Cookies are <p style="display:inline;color:green;font-weight: bold;">Enabled</p>`
     } else {
-        this.nextElementSibling.innerText = `Cookies are Disabled`
-
+        this.nextElementSibling.innerHTML = `Cookies are <p style="display:inline;color:red;font-weight: bold;">Disabled</p>`
     }
 }

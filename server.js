@@ -52,7 +52,7 @@ function luka_redirect(req, res, next) {
 }
 
 app.get("/status/401", (req, res) => {
-  res.set('WWW-Authenticate', 'Basic realm="401"') // change this
+  res.set('WWW-Authenticate', 'Basic realm="this_is_realm"') // change this
   if (req.headers.authorization !== 'Basic bHVrYTpjYXI=') {
     return res.status(401).send('Access denied. Please Authenticate') // Access denied.   
   }
@@ -78,7 +78,7 @@ app.get("/set_cookie", (req, res) => {
     cookie_exist = req.headers.cookie.split("; ").includes("serversidehttponly=qwerty123")
   }
   if (cookie_exist) {
-    res.send(`Cookie set succefful! ${req.headers.cookie}`)
+    res.send(`Cookie is set successfully! ${req.headers.cookie}`)
   } else {
     res.setHeader("set-cookie", "serversidehttponly=qwerty123; httpOnly=true")
     res.send(`Http only cookie is not set. <br>Tried to set http Only cookie, please refresh!`)
