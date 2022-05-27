@@ -60,3 +60,26 @@ function test_cookies_fn() {
         this.nextElementSibling.innerHTML = `Cookies are <p style="display:inline;color:red;font-weight: bold;">Disabled</p>`
     }
 }
+
+function get_geolocation_fn() {
+    let options = {
+        enableHighAccuracy: true,
+        timeout: 5000,
+        maximumAge: 0
+    };
+
+    function success(pos) { // success callback
+        let crd = pos.coords;
+        alert(`Your current position is:
+        Latitude : ${crd.latitude}
+        Longitude: ${crd.longitude}
+        More or less ${crd.accuracy} meters`);
+
+    };
+
+    function error(err) { // error callback
+        alert('ERROR(' + err.code + '): ' + err.message);
+    };
+
+    navigator.geolocation.getCurrentPosition(success, error, options);
+}

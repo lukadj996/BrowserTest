@@ -65,6 +65,10 @@ app.get("/status/408", (req, res) => {
   res.status(408).send("408 Request Timeout")
   // or call next() if you use it as middleware (as snippet #1)
 })
+app.get("/status/415", (req, res) => {
+  res.status(415).send("415 Unsupported Media Type")
+  // or call next() if you use it as middleware (as snippet #1)
+})
 app.post("/form", (req, res) => {
   let {
     testinput,
