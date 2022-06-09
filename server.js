@@ -72,9 +72,11 @@ app.get("/status/415", (req, res) => {
 app.post("/form", (req, res) => {
   let {
     testinput,
-    testinput2
+    testinput2,
+    pass,
+    number
   } = req.body
-  res.send(`<h1>Form submitted!</h1><p style="font-size:1.2em">testinput: "${testinput}", testinput 2: "${testinput2}"</p>`)
+  res.send(`<h1>Form submitted!</h1><p style="font-size:1.2em">testinput: "${testinput}", testinput 2: "${testinput2}", number: "${number}", password: "${pass}"</p>`)
 })
 app.get("/set_cookie", (req, res) => {
   let cookie_exist = false;
@@ -99,7 +101,7 @@ app.get("/clear_cookies", (req, res) => {
 })
 
 // Start the server
-const PORT = parseInt(process.env.PORT) || 80;
+const PORT = parseInt(process.env.PORT) || 8000;
 app.listen(PORT, () => {
   console.log(`App listening on port ${PORT}`);
 });

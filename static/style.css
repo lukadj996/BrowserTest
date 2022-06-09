@@ -1,3 +1,9 @@
+body {
+    display: block;
+    margin: 0px;
+    font-size: x-large;
+}
+
 .flex_container {
     display: flex;
     flex-direction: column;
@@ -59,13 +65,14 @@ h1 {
 
 input {
     display: block;
+    font-size: 1em;
 }
 
-@media only screen and (min-width:481px) and (max-width:850px){
+@media only screen and (min-width:481px) and (max-width:850px) {
     .flex_container {
         max-width: 80%;
     }
-	
+
 }
 
 @media (max-width: 480px) {
@@ -73,8 +80,9 @@ input {
         max-width: 100%;
     }
 }
+
 @media (min-width: 851px) {
     .flex_container {
         max-width: 50%;
     }
-  }
+}

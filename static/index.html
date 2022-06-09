@@ -45,6 +45,10 @@
             <div class="result"></div>
         </div>
         <div class="flex_row">
+            <button id="prompt_text">Prompt Text</button>
+            <div class="result"></div>
+        </div>
+        <div class="flex_row">
             <button id="loop_alert">Loop Alert</button>
             <div class="result"></div>
         </div>
@@ -78,6 +82,10 @@
             call me on:
             <a href="tel:555-666-7777">555-666-7777</a>
         </div>
+        <div class="flex_row">
+            write me email:
+            <a href="mailto: test@example.com">test@example.com</a>
+        </div>
     </div>
     <div class="flex_container">
         <div class="flex_row">
@@ -86,6 +94,10 @@
                 <input type="text" name="testinput" id="testinput">
                 <label for="testinput2">Test input (without suggestions):</label>
                 <input type="text" name="testinput2" id="testinput2" autocomplete="off">
+                <label for="number">Test input number:</label>
+                <input type="number" name="number" id="number">
+                <label for="pass">Test input password:</label>
+                <input type="password" name="pass" id="pass">
                 <button type="submit">Submit POST</button>
             </form>
         </div>

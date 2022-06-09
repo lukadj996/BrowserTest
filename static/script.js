@@ -36,7 +36,18 @@ function prompt_fn() {
         this.nextElementSibling.innerText = "You pressed Cancel"
     }
 }
-
+function prompt_text_fn() {
+    let ret = prompt("This is promt message with default text!","Default text")
+    if (ret !== null) {
+        if (ret === "") {
+            this.nextElementSibling.innerText = "You pressed OK"
+        } else {
+            this.nextElementSibling.innerText = `You typed: "${ret}"`
+        }
+    } else {
+        this.nextElementSibling.innerText = "You pressed Cancel"
+    }
+}
 function loop_alert_fn() {
     for (let i = 0; i < 10; i++) {
         alert(`This is Alert #${i}`)
