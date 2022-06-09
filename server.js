@@ -54,19 +54,19 @@ function luka_redirect(req, res, next) {
 app.get("/status/401", (req, res) => {
   res.set('WWW-Authenticate', 'Basic realm="this_is_realm"') // change this
   if (req.headers.authorization !== 'Basic bHVrYTpjYXI=') {
-    return res.status(401).send('Access denied. Please Authenticate') // Access denied.   
+    return res.status(401).send('<p style="font-size:2em">Access denied. Please Authenticate</p>') // Access denied.   
   }
   // Access granted...
-  res.send('Hello Luka!')
+  res.send('<p style="font-size:2em">Hello Luka!</p>')
   // or call next() if you use it as middleware (as snippet #1)
 })
 
 app.get("/status/408", (req, res) => {
-  res.status(408).send("408 Request Timeout")
+  res.status(408).send('<p style="font-size:2em">408 Request Timeout</p>')
   // or call next() if you use it as middleware (as snippet #1)
 })
 app.get("/status/415", (req, res) => {
-  res.status(415).send("415 Unsupported Media Type")
+  res.status(415).send('<p style="font-size:2em">415 Unsupported Media Type</p>')
   // or call next() if you use it as middleware (as snippet #1)
 })
 app.post("/form", (req, res) => {
@@ -76,7 +76,7 @@ app.post("/form", (req, res) => {
     pass,
     number
   } = req.body
-  res.send(`<h1>Form submitted!</h1><p style="font-size:1.2em">testinput: "${testinput}", testinput 2: "${testinput2}", number: "${number}", password: "${pass}"</p>`)
+  res.send(`<h1>Form submitted!</h1><p style="font-size:2em">testinput: "${testinput}", testinput 2: "${testinput2}", number: "${number}", password: "${pass}"</p>`)
 })
 app.get("/set_cookie", (req, res) => {
   let cookie_exist = false;
@@ -84,19 +84,19 @@ app.get("/set_cookie", (req, res) => {
     cookie_exist = req.headers.cookie.split("; ").includes("serversidehttponly=qwerty123")
   }
   if (cookie_exist) {
-    res.send(`Cookie is set successfully! ${req.headers.cookie}`)
+    res.send(`<p style="font-size:2em">Cookie is set successfully! ${req.headers.cookie}</p>`)
   } else {
     res.setHeader("set-cookie", "serversidehttponly=qwerty123; httpOnly=true")
-    res.send(`Http only cookie is not set. <br>Tried to set http Only cookie, please refresh!`)
+    res.send(`<p style="font-size:2em">Http only cookie is not set. <br>Tried to set http Only cookie, please refresh!</p>`)
   }
 })
 
 app.get("/clear_cookies", (req, res) => {
   if (req.headers.cookie) {
     res.setHeader("Clear-Site-Data", '"cookies"')
-    res.send(`Cookie recieved: ${req.headers.cookie} <br> please refresh to see if cookies are cleared!`)
+    res.send(`<p style="font-size:2em">Cookie recieved: ${req.headers.cookie} <br> please refresh to see if cookies are cleared!</p>`)
   } else {
-    res.send(`No cookies recieved!`)
+    res.send(`<p style="font-size:2em">No cookies recieved!</p>`)
   }
 })
 
