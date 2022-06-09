@@ -79,6 +79,9 @@ input {
     .flex_container {
         max-width: 100%;
     }
+    body {
+        font-size: 1em;
+    }
 }
 
 @media (min-width: 851px) {
