@@ -36,8 +36,9 @@ function prompt_fn() {
         this.nextElementSibling.innerText = "You pressed Cancel"
     }
 }
+
 function prompt_text_fn() {
-    let ret = prompt("This is promt message with default text!","Default text")
+    let ret = prompt("This is promt message with default text!", "Default text")
     if (ret !== null) {
         if (ret === "") {
             this.nextElementSibling.innerText = "You pressed OK"
@@ -48,6 +49,7 @@ function prompt_text_fn() {
         this.nextElementSibling.innerText = "You pressed Cancel"
     }
 }
+
 function loop_alert_fn() {
     for (let i = 0; i < 10; i++) {
         alert(`This is Alert #${i}`)
@@ -93,4 +95,18 @@ function get_geolocation_fn() {
     };
 
     navigator.geolocation.getCurrentPosition(success, error, options);
+}
+
+function block_js_fn() {
+    let timeStart = performance.now()
+    sleep_block(35000)
+    this.nextElementSibling.innerText = `${((performance.now() - timeStart)/1000).toFixed(2)} seconds passed`
+}
+
+
+function sleep_block(ms) {
+    let cT = new Date().getTime();
+    while (cT + ms >= new Date().getTime()) {
+
+    }
 }
